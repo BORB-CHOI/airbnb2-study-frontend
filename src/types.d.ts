@@ -22,11 +22,19 @@ username: string;
 }
 
 export interface IAmenity {
-name: string;
-description: string;
+  pk: number;
+  name: string;
+  description: string;
+}
+
+export interface ICategory {
+  pk: number;
+  name: string;
+  kind: string;
 }
 
 export interface IRoomDetail extends IRoomList {
+id: number;
 created_at: string;
 updated_at: string;
 rooms: number;
@@ -37,10 +45,7 @@ pet_friendly: true;
 kind: string;
 is_owner: boolean;
 is_liked: boolean;
-category: {
-    name: string;
-    kind: string;
-};
+category: ICategory;
 owner: IRoomOwner;
 amenities: IAmenity[];
 }
